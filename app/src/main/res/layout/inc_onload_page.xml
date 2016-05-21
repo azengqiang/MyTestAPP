@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <net.csdn.my.util.MyScrollLayout
+        android:id="@+id/msl_onload_page"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="visible" >
+
+        <!-- 第一张引导页 -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/indicator_p1" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="89dp"
+                android:text="@string/onloadWord"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <!-- 第二张引导页 -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/indicator_p2" />
+        <!-- 第三张引导页 -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/indicator_p3" />
+        <!-- 开始页 -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/indicator_p4" >
+
+            <Button
+                android:id="@+id/btn_onload_toApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="98dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/button_bg"
+                android:text="@string/startApp"
+                android:onClick="startApp"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </net.csdn.my.util.MyScrollLayout>
+</LinearLayout>

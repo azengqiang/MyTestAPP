@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:scrollbars="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--滑动页的布局 包含一个页面布局和小圆点布局 -->
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <include
+                layout="@layout/inc_main_care_top_page"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <include
+                layout="@layout/inc_main_care_top_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="24.0dip" />
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/ibtn_main_care_guanggao"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/top"
+            android:background="@drawable/tian_mao_bg01" />
+
+        <GridView
+            android:id="@+id/gv_main_care"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@+id/ibtn_main_care_guanggao"
+            android:numColumns="4" />
+
+        <ImageButton
+            android:id="@+id/m1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/gv_main_care"
+            android:background="@drawable/tian_mao_bg01" />
+
+        <ImageButton
+            android:id="@+id/m2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/m1"
+            android:background="@drawable/tian_mao_bg01" />
+
+        <ImageButton
+            android:id="@+id/m3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/m2"
+            android:background="@drawable/tian_mao_bg01" />
+    </RelativeLayout>
+
+</ScrollView>
+
