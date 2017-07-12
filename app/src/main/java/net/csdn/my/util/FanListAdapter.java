@@ -43,6 +43,7 @@ public class FanListAdapter extends BaseAdapter {
 
     /**
      * fan列表适配器
+     *
      * @param list mainfanBean的集合
      */
     public FanListAdapter(List<MainFanBean> list) {
@@ -127,14 +128,14 @@ public class FanListAdapter extends BaseAdapter {
 
         @Override
         protected BitmapDrawable doInBackground(String... params) {
-            imgUrl = params[0];
-            Bitmap bitmap = downLoadImg();
-            BitmapDrawable db = new BitmapDrawable(listView.getResources(),
-                    bitmap);
-            if(null==mImgCache.get(imgUrl)){
-                mImgCache.put(imgUrl,db);
-            }
-            return db;
+//            imgUrl = params[0];
+//            Bitmap bitmap = downLoadImg();
+//            BitmapDrawable db = new BitmapDrawable(listView.getResources(),
+//                    bitmap);
+//            if(null==mImgCache.get(imgUrl)){
+//                mImgCache.put(imgUrl,db);
+//            }
+            return null;
         }
 
         /**
@@ -166,7 +167,7 @@ public class FanListAdapter extends BaseAdapter {
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
-                    con.disconnect();
+                con.disconnect();
             }
             return bitmap;
         }

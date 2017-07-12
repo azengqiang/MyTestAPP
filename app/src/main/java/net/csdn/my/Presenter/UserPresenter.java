@@ -64,7 +64,7 @@ public class UserPresenter {
 
     public void login() {
         userLoginView.showLoading();
-        userModel.login(userLoginView.getUserName(), userLoginView.getUserName(), new OnLoginListener() {
+        userModel.login(userLoginView.getUserName(), userLoginView.getPassword(), new OnLoginListener() {
             @Override
             public void loginSuccess(final User user) {
                 //改变界面 需要在UI线程中执行

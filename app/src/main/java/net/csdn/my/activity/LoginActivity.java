@@ -3,7 +3,6 @@ package net.csdn.my.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -14,7 +13,10 @@ import com.example.lenovo.mytestapp.R;
 import net.csdn.my.view.UserLoginView;
 import net.csdn.my.view.UserRegisterView;
 
-public class LoginActivity extends AppCompatActivity {
+/**
+ * 登陆界面
+ */
+public class LoginActivity extends BaseActivity {
     private Button btn_login, btn_register;
     private TextView tv_justlook;
 
@@ -36,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, MainInterfaceActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
-                LoginActivity.this.finish();
             }
         });
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, UserLoginView.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                LoginActivity.this.finish();
             }
         });
         btn_register.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +54,6 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, UserRegisterView.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                LoginActivity.this.finish();
             }
         });
 

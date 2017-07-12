@@ -21,6 +21,18 @@
     <string name="main_mine">我</string>
     <string name="erweima">扫码</string>
     <string name="message">消息</string>
-
-
+    <string name="main_mine_data">个人资料</string>
+    <string name="main_mine_bound">账号绑定</string>
+    <string name="main_mine_collection">我的收藏</string>
+    <string name="main_mine_integral">我的积分</string>
+    <string name="main_mine_order">我的订单</string>
+    <string name="main_mine_setting">设置</string>
+    <string name="main_mine_car">购物车</string>
+    <string name="main_mine_choose">推荐有礼</string>
+    <string name="back">返回</string>
+    <string name="main_mine_data_head">头像</string>
+    <string name="main_mine_data_nickname">昵称</string>
+    <string name="main_mine_data_receiverAddress">收货地址管理</string>
+    <string name="main_mine_data_contactWay">联系方式</string>
+    <string name="main_mine_data_loginPassword">登陆密码</string>
 </resources>

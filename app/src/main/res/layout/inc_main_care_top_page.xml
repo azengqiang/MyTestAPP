@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <net.csdn.my.util.MyScrollLayout
-        android:id="@+id/msl_onload_page"
+        android:id="@+id/msl_care_top_page"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:visibility="visible">
@@ -39,19 +39,6 @@
             android:layout_height="fill_parent"
             android:background="@drawable/tian_mao_bg05"></RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@drawable/tian_mao_bg06"></RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@drawable/tian_mao_bg07"></RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@drawable/tian_mao_bg08"></RelativeLayout>
     </net.csdn.my.util.MyScrollLayout>
 </LinearLayout>

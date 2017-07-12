@@ -19,6 +19,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_CREATE_LOGIN = "create table user" +
             "(_id integer primary key autoincrement,username varchar(20),password varchar(20))";
 
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+    }
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }

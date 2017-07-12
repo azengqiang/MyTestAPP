@@ -29,18 +29,12 @@
                 android:layout_marginBottom="24.0dip" />
         </RelativeLayout>
 
-        <ImageButton
-            android:id="@+id/ibtn_main_care_guanggao"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@+id/top"
-            android:background="@drawable/tian_mao_bg01" />
-
         <GridView
             android:id="@+id/gv_main_care"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_below="@+id/ibtn_main_care_guanggao"
+            android:layout_height="150dp"
+            android:layout_below="@+id/top"
+            android:listSelector="@null"
             android:numColumns="4" />
 
         <ImageButton

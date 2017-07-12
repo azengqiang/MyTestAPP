@@ -2,6 +2,7 @@ package net.csdn.my.util;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +20,12 @@ import java.util.List;
  * 列表布局的适配器
  * Created by neijiang on 2016/5/15.
  */
-public class MyViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class RecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private LayoutInflater mLayoutInflater;
     private Context context;
-    List<TianMaoItem02> item02_list = new ArrayList<TianMaoItem02>();
+    List<TianMaoItem02> item02_list = new ArrayList <TianMaoItem02>();
     List<Integer> item01_list = new ArrayList<Integer>();
+    public static final String TAG = "RecycleViewAdapter";
 
     /**
      * *适配器构造器
@@ -31,7 +33,7 @@ public class MyViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
      * @param context     上下文
      * @param item02_list 列表数据
      */
-    public MyViewAdapter(Context context, List<Integer> item01_list, List<TianMaoItem02> item02_list) {
+    public RecycleViewAdapter(Context context, List<Integer> item01_list, List<TianMaoItem02> item02_list) {
         this.context = context;
         this.item01_list = item01_list;
         this.item02_list = item02_list;
@@ -89,12 +91,14 @@ public class MyViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public int getItemViewType(int position) {
 
-        return 2 == 2 ? ITEM_TYPE.ITEM2.ordinal() : ITEM_TYPE.ITEM1.ordinal();
+        return position%2 == 0 ? ITEM_TYPE.ITEM1.ordinal() : ITEM_TYPE.ITEM2.ordinal();
     }
 
     @Override
     public int getItemCount() {
-        return item02_list.size();
+        int count = item02_list.size() + item01_list.size();
+        Log.d(TAG, "recycleView总数" + count);
+        return count;
     }
 
     /**

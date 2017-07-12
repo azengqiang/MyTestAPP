@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:layout_marginTop="5dp"
-    android:orientation="horizontal">
-    <!--搜索的布局 -->
-    <LinearLayout
-        android:layout_width="60dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="8dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+    android:layout_height="65dp"
+    android:padding="4dp">
 
-        <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/erweima" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="@string/erweima" />
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/ibtn_erweima"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/erweima" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ibtn_erweima"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="@string/erweima" />
+
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="240dp"
-        android:layout_height="50dp"
-        android:background="@android:drawable/edit_text" />
+        android:layout_width="220dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/ibtn_erweima"
+        android:background="@android:drawable/edit_text"
+        android:onClick="search" />
 
-    <LinearLayout
-        android:layout_width="60dp"
-        android:layout_height="match_parent"
-        android:layout_marginRight="8dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
 
-        <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/message" />
+    <ImageButton
+        android:id="@+id/ibtn_msg"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/searchView"
+        android:background="@drawable/message" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="@string/message" />
-    </LinearLayout>
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ibtn_msg"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/searchView"
+        android:text="@string/message" />
+
+</RelativeLayout>
 

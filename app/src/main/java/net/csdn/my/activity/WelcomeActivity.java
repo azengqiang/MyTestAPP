@@ -11,6 +11,9 @@ import android.widget.ImageView;
 
 import com.example.lenovo.mytestapp.R;
 
+/**
+ * 应用开启界面，有一个页面动画
+ */
 public class WelcomeActivity extends AppCompatActivity {
 
     private ImageView welcomeImg = null;

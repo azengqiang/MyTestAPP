@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.lenovo.mytestapp.R;
 
@@ -24,8 +21,8 @@ import net.csdn.my.fragment.TianMaoFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainInterfaceActivity extends AppCompatActivity implements View.OnClickListener {
-    private int mFinishCount;//用户点击退出键的次数
+public class MainInterfaceActivity extends BaseActivity implements View.OnClickListener {
+
     /**
      * 主界面的中间布局的viewpager
      */
@@ -138,27 +135,27 @@ public class MainInterfaceActivity extends AppCompatActivity implements View.OnC
         /**
          * viewpager滑动响应事件
          */
-//        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//
-//            @Override
-//            public void onPageSelected(int position) {
-//                // TODO Auto-generated method stub
-//                int currentItem = mViewPager.getCurrentItem();
-//                setTab(currentItem);
-//            }
-//
-//            @Override
-//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//                // TODO Auto-generated method stub
-//
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int state) {
-//                // TODO Auto-generated method stub
-//
-//            }
-//        });
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageSelected(int position) {
+                // TODO Auto-generated method stub
+                int currentItem = mViewPager.getCurrentItem();
+                setTab(currentItem);
+            }
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                // TODO Auto-generated method stub
+
+            }
+        });
     }
 
     /**
@@ -237,24 +234,5 @@ public class MainInterfaceActivity extends AppCompatActivity implements View.OnC
         ibtn_main_mine.setImageResource(R.drawable.main_mine_normal);
     }
 
-    /*
-    dispatchTouchEvent作用是将touch事件向下传递直到遇到被触发的目标view,如果返回true,
-    表示当前view就是目标view,事件停止向下分发。否则返回false,表示当前view不是目标view,
-    需要继续向下分发寻找目标view.这个方法也可以被重载，手动分配事件。
-     */
-    public boolean dispatchTouchEvent(MotionEvent me) {
-        mFinishCount = 0;
-        return super.dispatchTouchEvent(me);
-    }
-
-    //重写finish方法，当用户点击两下退出键，就结束app
-    public void finish() {
-        mFinishCount++;
-        if (1 == mFinishCount) {
-            Toast.makeText(MainInterfaceActivity.this, "确认退出吗", Toast.LENGTH_SHORT).show();
-        } else if (2 == mFinishCount) {
-            super.finish();
-        }
-    }
 
 }

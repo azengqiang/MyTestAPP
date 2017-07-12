@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_mine_bg">
+
+    <include
+        android:id="@+id/com_main_mine_data_top"
+        layout="@layout/com_main_mine_data_top" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/com_main_mine_data_top"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="40.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:paddingTop="10.0dip">
+
+        <TableLayout
+            android:id="@+id/tl_main_mine_data_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="0"
+            android:stretchColumns="0">
+
+            <TableRow
+                android:id="@+id/tr_main_mine_data_head"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:background="@drawable/more_item_press"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:drawablePadding="10.0dip"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="17.0dip"
+                    android:text="@string/main_mine_data_head"
+                    android:textColor="#ff333333"
+                    android:textSize="16.0sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/arrow_magin"
+                    android:src="@drawable/w3" />
+
+                <ImageView
+                    android:id="@+id/ibtn_main_mine_data_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/arrow_padding"
+                    android:src="@drawable/ic_arrow" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_main_mine_data_nickname"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:background="@drawable/more_item_press"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:drawablePadding="10.0dip"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="17.0dip"
+                    android:text="@string/main_mine_data_nickname"
+                    android:textColor="#ff333333"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/arrow_magin"
+                    android:gravity="center"
+                    android:text="内江一中" />
+
+                <ImageView
+                    android:id="@+id/ibtn_main_mine_data_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/arrow_padding"
+                    android:src="@drawable/ic_arrow" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_main_mine_data_contactWay"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:background="@drawable/more_item_press"
+                android:clickable="true"
+                android:paddingBottom="16.0dip"
+                android:paddingTop="16.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:drawablePadding="10.0dip"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="17.0dip"
+                    android:text="@string/main_mine_data_contactWay"
+                    android:textColor="#ff333333"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/arrow_magin"
+                    android:gravity="center"
+                    android:text="这是个秘密" />
+
+                <ImageView
+                    android:id="@+id/ibtn_main_mine_data_contactWay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/arrow_padding"
+                    android:src="@drawable/ic_arrow" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_main_mine_data_loginPassword"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:background="@drawable/more_item_press"
+                android:clickable="true"
+                android:paddingBottom="16.0dip"
+                android:paddingTop="16.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:drawablePadding="10.0dip"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="17.0dip"
+                    android:text="@string/main_mine_data_loginPassword"
+                    android:textColor="#ff333333"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/arrow_magin"
+                    android:gravity="center"
+                    android:text="我不告诉你" />
+
+                <ImageView
+                    android:id="@+id/ibtn_main_mine_data_loginPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/arrow_padding"
+                    android:src="@drawable/ic_arrow" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_main_mine_data_receiverAddress"
+                android:layout_width="fill_parent"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:background="@drawable/more_item_press"
+                android:clickable="true"
+                android:paddingBottom="16.0dip"
+                android:paddingTop="16.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:drawablePadding="10.0dip"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="17.0dip"
+                    android:text="@string/main_mine_data_receiverAddress"
+                    android:textColor="#ff333333"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/arrow_magin"
+                    android:gravity="center"
+                    android:text="西南石油大学" />
+
+                <ImageView
+                    android:id="@+id/ibtn_main_mine_data_receiverAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/arrow_padding"
+                    android:src="@drawable/ic_arrow" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -8,7 +8,6 @@ import android.util.Log;
 
 import net.csdn.my.bean.RegisterUser;
 import net.csdn.my.bean.User;
-import net.csdn.my.util.MyToast;
 
 /**
  * 用户登陆和注册的数据服务类
@@ -28,7 +27,8 @@ public class UserService {
      */
     String sql = null;
     private Context context;
-    private static final String TAG="TEST";
+    private static final String TAG = "UserService";
+
     /**
      * 新建服务类时，获取数据库辅助类的单例
      *
@@ -49,19 +49,25 @@ public class UserService {
     public boolean login(User user) {
         // 通过辅助对象调用getReadableDatabase（）方法 如果数据库不存在就创建 否则直接打开
         mdb = dbHelper.getReadableDatabase();
+        Log.d(TAG, "登陆数据库地址:" + mdb.getPath());
         sql = "select * from user where username=? and password=?";
         Cursor cursor = mdb.rawQuery(sql, new String[]{user.getUserName(), user.getPassword()});
-        if (cursor.moveToFirst() == true) {
-            Log.d(TAG,cursor.getColumnName(1));
+        if (cursor.moveToNext() == true) {
+            Log.d(TAG, "登陆名：" + cursor.getString(1) + "密码：" + cursor.getString(2));
             cursor.close();
-//            //关闭数据库辅助类和数据库操作类
-//            dbHelper.close();
-//            mdb.close();
+            // 关闭数据库辅助类和数据库操作类
+            dbHelper.close();
+            mdb.close();
             return true;
         }
-        //关闭数据库辅助类和数据库操作类
-//        dbHelper.close();
-//        mdb.close();
+//        sql = "select * from user ";
+//        Cursor cursor = mdb.rawQuery(sql, null);
+//        while (cursor.moveToNext()) {
+//            Log.d(TAG, "登陆名：" + cursor.getString(1) + "密码：" + cursor.getString(2));
+//        }
+        // 关闭数据库辅助类和数据库操作类
+        dbHelper.close();
+        mdb.close();
         return false;
     }
 
@@ -73,22 +79,44 @@ public class UserService {
      */
     public boolean register(RegisterUser registerUser) {
         mdb = dbHelper.getReadableDatabase();
+        Log.d(TAG, "注册数据库地址" + mdb.getPath());
         sql = "insert into user(username,password) values(?,?)";
         Object obj[] = {registerUser.getUserName(), registerUser.getPassword()};
-/*        if (registerUser.getUserName().equals(null) || registerUser.getPassword().equals(null)) {
-            new MyToast(context, "注册信息不完整，请重试");
-            return false;
-        }*/
+//        if (TextUtils.isEmpty(registerUser.getUserName()) || TextUtils.isEmpty(registerUser.getPassword())) {
+//            Log.d(TAG, "注册信息不完整");
+//            return false;
+//        }
         try {
             mdb.execSQL(sql, obj);
-            Log.d(TAG,"注册成功");
+            Log.d(TAG, registerUser.getUserName() + "注册成功");
             //关闭数据库辅助类和数据库操作类
             dbHelper.close();
             mdb.close();
             return true;
         } catch (SQLException e) {
-            new MyToast(context, "数据库插入失败");
+            Log.d(TAG, "数据库插入失败");
         }
         return false;
     }
+
+//    /**
+//     * 判断字符串是否为空或者包含转义字符
+//     *
+//     * @param s 字符串
+//     * @return false 表示字符串不为空 true 表示字符串为空
+//     */
+//    public static boolean isEmpty(String s) {
+//        if (s == null || s.equals("")) {
+//            return true;
+//        }
+//        for (int i = 0; i < s.length(); i++) {
+//            char c = s.charAt(i);
+//            if (c != ' ' && c != '\t' && c != '\r' && c != '\n') {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+
+
 }

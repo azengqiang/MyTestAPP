@@ -1,6 +1,7 @@
 package net.csdn.my.model;
 
 import android.content.Context;
+import android.util.Log;
 
 import net.csdn.my.bean.RegisterUser;
 import net.csdn.my.bean.User;
@@ -20,7 +21,7 @@ public class UserModel implements IUserModel {
     private UserService userService;
     public UserModel() {
     }
-
+    public static  String TAG="BEAN";
     public UserModel(Context context) {
         this.context = context;
     }
@@ -29,6 +30,7 @@ public class UserModel implements IUserModel {
         User user = new User();
         user.setUserName(userName);
         user.setPassword(password);
+        Log.d(TAG,"用户名："+userName+"密码:"+password);
         userService = new UserService(context);
         if (userService.login(user)) {
             loginListener.loginSuccess(user);
@@ -42,11 +44,14 @@ public class UserModel implements IUserModel {
         RegisterUser registerUser = new RegisterUser();
         registerUser.setUserName(userName);
         registerUser.setPassword(password);
+
         userService = new UserService(context);
+
         if(userService.register(registerUser)){
             registerListener.registerSuccess(registerUser);
         }else{
             registerListener.registerFailed();
         }
     }
+
 }
